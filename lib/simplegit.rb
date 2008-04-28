@@ -18,7 +18,7 @@ class SimpleGit
   end
 
   def log(treeish = 'master')
-    command("git log -n 25 #{treeish}")
+    command("git log -n 30 #{treeish}")
   end
 
   def blame(path)
