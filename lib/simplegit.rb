@@ -10,7 +10,7 @@ class SimpleGit
   end
 
   def show(treeish = 'master')
-    command("git show #{treeish}")
+    command("git show --raw #{treeish}")
   end
 
   def log(treeish = 'master')
