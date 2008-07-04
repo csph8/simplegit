@@ -17,6 +17,10 @@ class SimpleGit
     command("git show --raw #{treeish}")
   end
 
+  def object(sha = 'master')
+    command("git cat-file -p #{sha}")
+  end
+  
   def log(treeish = 'master')
     command("git log -n 30 #{treeish}")
   end
