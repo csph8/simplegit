@@ -21,20 +21,24 @@ class SimpleGit
     command("git cat-file -p #{sha}")
   end
   
-  def log(treeish = 'master')
-    command("git log -n 30 #{treeish}")
+  def log(treeish = 'master', number = 5)
+    command("git log -n #{number} #{treeish}")
+  end
+
+  def apply(file)
+    command("git apply #{file}")
   end
 
   def blame(path)
     command("git blame #{path}")
   end
 
-  def cat-file(path)
+  def cat_file(path)
     command("git cat-file -p #{path}")
   end
 
   def ls_tree(treeish = 'master')
-    command("git ls-tree -r -t #{treeish}")
+    command("git ls-tree -r #{treeish}")
   end
 
   def ls_files
