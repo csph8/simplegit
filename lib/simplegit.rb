@@ -5,6 +5,10 @@ class SimpleGit
     @git_dir = File.expand_path(git_dir)
   end
   
+  def diff(sha1, sha2)
+    command("git diff #{sha1}..#{sha2}")
+  end
+  
   def status
     command("git status")
   end
