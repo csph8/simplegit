@@ -9,6 +9,10 @@ class SimpleGit
     command("git status")
   end
 
+  def apply(file)
+    command("git apply #{file}")
+  end
+  
   def show(treeish = 'master')
     command("git show #{treeish}")
   end
