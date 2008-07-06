@@ -13,7 +13,7 @@ class SimpleGit
     command("git status")
   end
 
-  def apply(file)
+  def apply_patch(file)
     command("git apply #{file}")
   end
   
@@ -31,10 +31,6 @@ class SimpleGit
   
   def log(treeish = 'master', number = 5)
     command("git log -n #{number} #{treeish}")
-  end
-
-  def apply(file)
-    command("git apply #{file}")
   end
 
   def blame(path)
