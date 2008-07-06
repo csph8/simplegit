@@ -13,6 +13,41 @@ class SimpleGit
     command("git show #{treeish}")
   end
 
+  def apply(file)
+    command("git apply #{file}")
+  end
+
+  def log(treeish = 'master', number = 5)
+    command("git log -n #{number} #{treeish}")
+  end
+
+  def blame(path)
+    command("git blame #{path}")
+  end
+
+  def cat_file(path)
+    command("git cat-file -p #{path}")
+  end
+
+  def ls_tree(treeish = 'master')
+    command("git ls-tree -r #{treeish}")
+  end
+
+  def ls_files
+    command("git ls-files --stage")
+  end
+
+  def file_type(sha)
+    command("git cat-file -t #{sha}")
+  end
+
+  def file_size(sha)
+    command("git cat-file -s #{sha}")
+  end
+
+  private
+  
+
   def log(treeish = 'master', number = 5)
     command("git log -n #{number} #{treeish}")
   end
