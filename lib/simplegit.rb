@@ -13,7 +13,7 @@ class SimpleGit
     command("git show #{treeish}")
   end
 
-  def apply(file)
+  def patch_apply(file)
     command("git apply #{file}")
   end
 
