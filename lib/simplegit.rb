@@ -41,8 +41,8 @@ class SimpleGit
     command("git cat-file -t #{sha}")
   end
   
-  def last_upload_status(treeish = 'master')
-  	command("git log -1 #{treeish} --pretty=format:\"Code last updated %ar by %an (hash: %h)\"")
+  def last_commit_info(treeish = 'master', show_by=true, show_hash=true)
+  	command("git log -1 #{treeish} --pretty=format:\"Code last updated %ar#{" by %an" if show_by}#{" (hash: %h)" if show_hash}\"")
   end
 
   private
