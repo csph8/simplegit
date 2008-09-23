@@ -42,7 +42,7 @@ class SimpleGit
   end
   
   def last_upload_status(treeish = 'master')
-  	command("git log -1 #{treeish} --pretty=format:'Code last update %ar by %an (hash: %h)'")
+  	command("git log -1 #{treeish} --pretty=format:\"Code last update %ar by %an (hash: %h)\"")
   end
 
   private
