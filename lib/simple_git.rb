@@ -42,7 +42,7 @@ class SimpleGit
   end
   
   def last_commit_info(treeish = 'master', show_by=true, show_hash=true)
-  	command("git log -1 #{treeish} --pretty=format:\"Code last updated %ar#{" by %an" if show_by}#{" (hash: %h)" if show_hash}\"")
+  	command("git log -1 #{treeish} --pretty=format:\"%at#{"| %an" if show_by}#{"| %h" if show_hash}\"")
   end
 
   private
